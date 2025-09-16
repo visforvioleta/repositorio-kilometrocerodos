@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Repositorio "Viaje al Kilometro Cero II"</title>
+    <meta name="description" content="Galeria virtual de vestigios de un proyecto que no llegó a puerto" />
+    <meta name="author" content="@VisforVioleta / @Inconexo_Lab" /> 
+    <meta property="og:title" content="Repositorio Viaje al Kilometro Cero II">
+<meta property="og:description" content="Galeria virtual de vestigios de un proyecto que murió en el intento">
+<!-- cambiar URL de la imagen y de la página -->
+<meta property="og:image" content="https://i.ibb.co/rf09J9W/Canto-2-preview-360-1.jpg">
+<meta property="og:url" content="https://i.ibb.co/rf09J9W/Canto-2-preview-360-1.jpg">
+
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-sun-sky@3.0.3/dist/aframe-sun-sky.min.js"></script>
+    <script src="https://unpkg.com/hydra-synth"></script>
+  </head>
+
+  <body>
+    <!-- cambiar URL de la imagen y de la página -->
+    <a-scene
+      id="scene"
+      background="color: #729ea1"
+      vr-mode-ui="enabled: true"
+      aframe-init=""
+      renderer="colorManagement: true"
+      assets-timeout="10000"
+    >
+      <a-assets>
+        <img
+          id="skyTexture"
+          src="./assets/fondo360.jpg"
+          crossorigin="anonymous"
+        />
+        <a-asset-item
+          id="cris"
+          src="assets/Cris_lowpoly.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="auto"
+          src="assets/auto_lowpoly.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="cruz"
+          src="assets/colar.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="tequila"
+          src="assets/tequila_lowpoly.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="flor"
+          src="assets/flor_lowpoly.glb"
+        ></a-asset-item>
+
+        <video id="video1" src="./assets/viajealkmcerodos.mp4" preload="metadata" playsinline crossorigin="anonymous"></video>
+        <video id="video2" src="./assets/backstage.mp4" preload="metadata" playsinline crossorigin="anonymous"></video>
+        <video id="video3" src="./assets/doscovers.mp4" preload="metadata" playsinline crossorigin="anonymous"></video>
+         <video id="video4" src="./assets/mixcover.mp4" preload="metadata" playsinline crossorigin="anonymous"></video>
+
+        <img id="playIcon" src="./assets/play.png">
+        <img id="pauseIcon" src="./assets/pause.png">
+      </a-assets>
+
+      <!--<a-video id="plane1" src="#video1" width="4" height="2.25" position="-5 2 -6"></a-video>
+      <a-image id="play1" src="#playIcon" width="0.6" height="0.6" position="-6 0.5 -6" class="clickable"></a-image>
+      <a-image id="pause1" src="#pauseIcon" width="0.6" height="0.6" position="-4 0.5 -6" class="clickable"></a-image>
+      -->
+            <a-video id="plane1" src="#video1" width="16" height="9" position="0 4 12" rotation="0 180 0"></a-video>
+<a-image id="play1" src="#playIcon" width="0.75" height="0.75" position="2 0.5 10" scale="1 1 1" rotation="0 180 0" class="clickable"></a-image>
+      <a-image id="pause1" src="#pauseIcon" width="0.75" height="0.75" position="-2 0.5 10" scale="1 1 1" class="clickable"></a-image>
+
+
+  <a-entity position="-10 -0.25 -9.25" rotation="-10 75 0">
+  <a-video id="plane2" src="#video2" width="4" height="2.25" position="0 0 0"></a-video>
+  <a-image id="play2" src="#playIcon" width="0.5" height="0.5" position="-1 1.5 0" class="clickable"></a-image>
+  <a-image id="pause2" src="#pauseIcon" width="0.5" height="0.5" position="1 1.5 0" class="clickable"></a-image>
+</a-entity>
+
+           <a-entity position="12 -0.25 -3" rotation="-10 -45 0">
+      <a-video id="plane3" src="#video3" width="4" height="2.25" position="0 0 0"></a-video>
+      <a-image id="play3" src="#playIcon" width="0.5" height="0.5" position="-1 1.5 0" class="clickable"></a-image>
+      <a-image id="pause3" src="#pauseIcon" width="0.5" height="0.5" position="1 1.5 0" class="clickable"></a-image>
+ </a-entity>
+
+            <a-entity position="-13.5 0.75 2.25" rotation="0 90 0">
+      <a-video id="plane4" src="#video4" width="4" height="2.25" position="0 0 0"></a-video>
+      <a-image id="play4" src="#playIcon" width="0.5" height="0.5" position="-1 1.5 0" class="clickable"></a-image>
+      <a-image id="pause4" src="#pauseIcon" width="0.5" height="0.5" position="1 1.5 0" class="clickable"></a-image>
+ </a-entity>
+
+      <a-plane
+        id="planovideo"
+        position="0 -1.5 -4"
+        rotation="-90 0 0"
+        width="32"
+        height="18"
+        color="#fff"
+      ></a-plane>
+      <a-sky src="#skyTexture"></a-sky>
+
+      <a-entity
+        gltf-model="#cris"
+        material="shader: flat"
+        position="0 -0.5 -5"
+        scale="7.5 7.5 7.5"
+        gltf-updater=""
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#auto"
+        material="shader: flat"
+        position="10 -1.55 3.5"
+        scale="5.5 5.5 5.5"
+        gltf-updater=""
+        animation="property: position; to: -10 -1.55 3.5; dur: 5000; easing: linear; loop: true"
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#cruz"
+        material="shader: flat"
+        position="0 27.5 -17.5"
+        scale="20 20 20"
+        gltf-updater=""
+        animation="property: rotation; to: 0 0 360; loop: true; dur: 10000"
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#tequila"
+        material="shader: flat"
+        position="-11.5 -1.6 -8.35"
+        rotation="0 45 0"
+        scale="7.5 7.5 7.5"
+        gltf-updater=""
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#flor"
+        material="shader: flat"
+        position="11.5 -1.6 -8.35"
+        rotation="0 -22.5 0"
+        scale="7.5 7.5 7.5"
+        gltf-updater=""
+      ></a-entity>
+
+      <a-entity camera look-controls wasd-controls></a-entity>
+      <a-entity cursor="rayOrigin: mouse" raycaster="objects: .clickable"></a-entity>
+    </a-scene>
+
+    <script>
+      let hydra, hydraCanvas;
+      hydraCanvas = document.createElement("canvas");
+      hydraCanvas.width = 512;
+      hydraCanvas.height = 512;
+      hydraCanvas.id = "hydraCanvas";
+      document.querySelector("a-assets").appendChild(hydraCanvas);
+
+      hydra = new Hydra({
+        canvas: hydraCanvas,
+        enableStreamCapture: false,
+        detectAudio: false,
+        width: 512,
+        height: 512,
+      });
+
+      setResolution(1280, 720);
+      s0.initVideo("https://cdn.glitch.me/fe4d1a17-c9db-41c5-af95-a458680391b0/VIDEO_1minuto.mp4");
+      src(s0)
+        .scale(1, 9 / 16)
+        .modulateScale(noise(0.01))
+        .modulate(o0, () => Math.sin(time) / 5)
+        .rotate(0.001, 0.001)
+        .blend(src(o0).scale(1.01), 0.75)
+        .out(o0);
+      render(o0);
+      speed = 0.075;
+      fps = 24;
+
+      let delta = 0;
+
+      AFRAME.registerComponent("canvas-updater", {
+        dependencies: ["geometry", "material"],
+
+        tick: function () {
+          var el = this.el;
+          var material;
+
+          material = el.getObject3D("mesh").material;
+          if (!material.map) {
+            return;
+          }
+          material.map.needsUpdate = true;
+        },
+      });
+
+      AFRAME.registerComponent("aframe-init", {
+        init: function () {
+          document
+            .querySelector("#planovideo")
+            .setAttribute("canvas-updater", "");
+          document
+            .querySelector("a-plane")
+            .setAttribute("material", "src:#hydraCanvas");
+        },
+        tick: function (time, deltaTime) {
+          delta += deltaTime;
+        },
+      });
+
+      // A-Frame components for video controls
+      AFRAME.registerComponent('play-video', {
+        schema: { type: 'selector' },
+        init: function () {
+          const video = this.data;
+          this.el.addEventListener('click', () => {
+            if (!video) return;
+            video.volume = 0.5;
+            video.play().catch(err => console.warn('Play blocked:', err));
+          });
+        }
+      });
+
+      AFRAME.registerComponent('pause-video', {
+        schema: { type: 'selector' },
+        init: function () {
+          const video = this.data;
+          this.el.addEventListener('click', () => {
+            if (!video) return;
+            video.pause();
+          });
+        }
+      });
+
+      // Attach play/pause behavior once DOM is ready
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('play1').setAttribute('play-video', '#video1');
+        document.getElementById('pause1').setAttribute('pause-video', '#video1');
+        document.getElementById('play2').setAttribute('play-video', '#video2');
+        document.getElementById('pause2').setAttribute('pause-video', '#video2');
+        document.getElementById('play3').setAttribute('play-video', '#video3');
+        document.getElementById('pause3').setAttribute('pause-video', '#video3');
+
+                document.getElementById('play4').setAttribute('play-video', '#video4');
+        document.getElementById('pause4').setAttribute('pause-video', '#video4');
+      });
+    </script>
+  </body>
+</html>
