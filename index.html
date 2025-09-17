@@ -142,8 +142,18 @@
       ></a-entity>
 
   <!-- <a-entity camera look-controls wasd-controls></a-entity> 
-  <a-entity camera look-controls wasd-controls mobile-controls></a-entity> -->
-<a-entity camera look-controls wasd-controls mobile-joystick></a-entity>
+  <a-entity camera look-controls wasd-controls mobile-controls></a-entity> 
+<a-entity camera look-controls wasd-controls mobile-joystick></a-entity>-->
+
+<a-entity
+  id="player-camera"
+  camera
+  position="0 1.6 0"
+  look-controls="pointerLockEnabled: true"  
+  wasd-controls                            
+  joystick-controls="movementSpeed: 0.2; rotateSpeed: 3"  
+></a-entity>
+
 
 
       <a-entity cursor="rayOrigin: mouse" raycaster="objects: .clickable"></a-entity>
