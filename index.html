@@ -8,7 +8,7 @@
     <meta name="author" content="@VisforVioleta / @Inconexo_Lab" /> 
     <meta property="og:title" content="Repositorio Viaje al Kilometro Cero II">
 <meta property="og:description" content="Galeria virtual de vestigios de un proyecto que murió en el intento">
-<meta property="og:image" content="https://i.ibb.co/rf09J9W/Canto-2-preview-360-1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/visforvioleta/repositorio-kilometrocerodos/refs/heads/main/assets/fotoproyecto.png">
 <meta property="og:url" content="https://www.instagram.com/inconexo_lab/">
 
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
@@ -205,7 +205,7 @@
         },
       });
 
-      // A-Frame components for video controls
+      // A-Frame components para controlar videos con play/pause
       AFRAME.registerComponent('play-video', {
         schema: { type: 'selector' },
         init: function () {
@@ -229,7 +229,7 @@
         }
       });
 
-      // Attach play/pause behavior once DOM is ready
+      // Atribuir componentes a los botones después de que el DOM esté cargado
       document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('play1').setAttribute('play-video', '#video1');
         document.getElementById('pause1').setAttribute('pause-video', '#video1');
