@@ -14,7 +14,7 @@
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-sun-sky@3.0.3/dist/aframe-sun-sky.min.js"></script>
     <script src="https://unpkg.com/hydra-synth"></script>
-<script src="https://unpkg.com/aframe-joystick-controls/dist/aframe-joystick-controls.min.js"></script>
+
     
   </head>
 
@@ -141,19 +141,7 @@
         gltf-updater=""
       ></a-entity>
 
-  <!-- <a-entity camera look-controls wasd-controls></a-entity> 
-  <a-entity camera look-controls wasd-controls mobile-controls></a-entity> 
-<a-entity camera look-controls wasd-controls mobile-joystick></a-entity>-->
-
-<a-entity
-  id="player-camera"
-  camera
-  position="0 1.6 0"
-  look-controls="pointerLockEnabled: true"  
-  wasd-controls                            
-  joystick-controls="movementSpeed: 0.2; rotateSpeed: 3"  
-></a-entity>
-
+  <a-entity camera look-controls wasd-controls></a-entity> 
 
 
       <a-entity cursor="rayOrigin: mouse" raycaster="objects: .clickable"></a-entity>
@@ -257,13 +245,6 @@
       });
 
 
-      AFRAME.registerComponent('mobile-controls', {
-  init: function () {
-    if (AFRAME.utils.device.isMobile()) {
-      this.el.setAttribute('joystick-controls', '');
-    }
-  }
-});
     </script>
   </body>
 </html>
