@@ -141,8 +141,8 @@
         gltf-updater=""
       ></a-entity>
 
-      <!-- <a-entity camera look-controls wasd-controls></a-entity> -->
-<a-entity camera look-controls movement-controls></a-entity>
+  <!-- <a-entity camera look-controls wasd-controls></a-entity> -->
+  <a-entity camera look-controls wasd-controls mobile-controls></a-entity>
 
       <a-entity cursor="rayOrigin: mouse" raycaster="objects: .clickable"></a-entity>
     </a-scene>
@@ -243,6 +243,15 @@
                 document.getElementById('play4').setAttribute('play-video', '#video4');
         document.getElementById('pause4').setAttribute('pause-video', '#video4');
       });
+
+
+      AFRAME.registerComponent('mobile-controls', {
+  init: function () {
+    if (AFRAME.utils.device.isMobile()) {
+      this.el.setAttribute('joystick-controls', '');
+    }
+  }
+});
     </script>
   </body>
 </html>
