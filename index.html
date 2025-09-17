@@ -14,7 +14,7 @@
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-sun-sky@3.0.3/dist/aframe-sun-sky.min.js"></script>
     <script src="https://unpkg.com/hydra-synth"></script>
-
+<script src="https://unpkg.com/aframe-joystick-controls/dist/aframe-joystick-controls.min.js"></script>
     
   </head>
 
@@ -141,7 +141,9 @@
         gltf-updater=""
       ></a-entity>
 
-      <a-entity camera look-controls wasd-controls></a-entity>
+      <!-- <a-entity camera look-controls wasd-controls></a-entity> -->
+<a-entity camera look-controls movement-controls></a-entity>
+
       <a-entity cursor="rayOrigin: mouse" raycaster="objects: .clickable"></a-entity>
     </a-scene>
 
